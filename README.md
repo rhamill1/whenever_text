@@ -1,24 +1,56 @@
-# README
+# whenever
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Whenever is a Ruby gem that provides a clear syntax for writing and deploying cron jobs
 
-Things you may want to cover:
+### What's a cron job?
+Ever have a manual task you do for work daily, weekly, monthly, hourly? Automate the task and schedule it with cron!
 
-* Ruby version
+<li> Email
+<li> Reports
+<li> Backend ETL
+<li> Change the appearance of a webpage at regular intervals
 
-* System dependencies
+## Setup
 
-* Configuration
 
-* Database creation
+```sh
+$ gem install whenever
+```
 
-* Database initialization
+Or with Bundler in your Gemfile.
 
-* How to run the test suite
+```ruby
+gem 'whenever', :require => false
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### Getting started
 
-* Deployment instructions
+```sh
+$ cd /apps/my-great-project
+$ wheneverize .
+```
 
-* ...
+This will create an initial `config/schedule.rb` file for you.
+
+
+
+
+
+
+
+
+
+## Demo the awesomeness of this gem!
+
+<li> httparty "https://api.stackexchange.com/2.2/questions?site=stackoverflow"
+<li> httparty "http://food2fork.com/api/search?key=ac89596132bf565718f0859218dadf7f&q=shredded%20cheese"
+
+## Examples
+
+## Resources
+
+<li> [Github and Docs](https://github.com/jnunemaker/httparty)
+<li> [Treehouse Blog About Setup](http://blog.teamtreehouse.com/its-time-to-httparty)
+
+## Take Away
+
