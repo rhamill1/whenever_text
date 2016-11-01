@@ -109,5 +109,5 @@ $ rake print_stuff
 <li> Does not work well with Heroku
 <li> Can not execute at seconds interval
 <li> If testing write to a file. Can't console log to terminal or server.
-<li> Potentially better options:  
+<li> Potentially better options:  (rufus schedular, sidkiq)
 <li> Specify environment (default if PROD, job file or command line)
