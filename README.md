@@ -50,8 +50,39 @@ every :sunday, :at => '12pm' do # Use any day of the week or :weekend, :weekday
 end
 ```
 <br>
+to update the cron schedule run:
 ```
 $ whenever -i
+```
+<br>
+### lib/tasks
+```
+desc 'test print'
+task print_stuff: :environment do
+
+    open('test_file.txt', 'a') do |f|
+      f.puts "Hello, world. It's me again."
+    end
+end
+```
+
+
+<br>
+to check the jobs and their schedule run:
+```
+whenever
+```
+<br>
+check what bash code is being executed and at what interval
+```
+$ crontab -l
+```
+
+
+
+### Manually Test Your Job
+```
+$ rake print_stuff
 ```
 
 
@@ -79,3 +110,4 @@ $ whenever -i
 <li> Can not execute at seconds interval
 <li> If testing write to a file. Can't console log to terminal or server.
 <li> Potentially better options:  
+<li> Specify environment (default if PROD, job file or command line)
