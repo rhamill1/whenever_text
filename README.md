@@ -32,25 +32,50 @@ $ wheneverize .
 
 This will create an initial `config/schedule.rb` file for you.
 
+### schedule.rb
+
+##### syntax 1
+```
+set :environment, "development"
+
+every 1.minutes do
+  rake 'print_stuff'
+end
+```
+<br><br>
+#### syntax 2
+```
+every :sunday, :at => '12pm' do # Use any day of the week or :weekend, :weekday
+  runner "Task.do_something_great"
+end
+```
+<br>
+```
+$ whenever -i
+```
 
 
+## Cron Syntax
 
-
-
-
-
-
-## Demo the awesomeness of this gem!
-
-<li> httparty "https://api.stackexchange.com/2.2/questions?site=stackoverflow"
-<li> httparty "http://food2fork.com/api/search?key=ac89596132bf565718f0859218dadf7f&q=shredded%20cheese"
-
-## Examples
+```
+* * * * * *
+| | | | | |
+| | | | | +-- Year              (range: 1900-3000)
+| | | | +---- Day of the Week   (range: 1-7, 1 standing for Monday)
+| | | +------ Month of the Year (range: 1-12)
+| | +-------- Day of the Month  (range: 1-31)
+| +---------- Hour              (range: 0-23, 1 in our example)
++------------ Minute            (range: 0-59, 10 in our example)
+```
 
 ## Resources
 
-<li> [Github and Docs](https://github.com/jnunemaker/httparty)
-<li> [Treehouse Blog About Setup](http://blog.teamtreehouse.com/its-time-to-httparty)
+<li> [Github and Docs](https://github.com/javan/whenever)
 
-## Take Away
 
+## Take Aways
+
+<li> Does not work well with Heroku
+<li> Can not execute at seconds interval
+<li> If testing write to a file. Can't console log to terminal or server.
+<li> Potentially better options:  
